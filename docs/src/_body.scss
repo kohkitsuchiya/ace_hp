@@ -1,0 +1,1137 @@
+@use "var";
+
+@include var.pc_screen() {
+}
+
+@include var.sp_screen() {
+  .adjustment {
+    padding-top: 75px;
+  }
+  body {
+    background-color: black;
+    color: white;
+  }
+  .swiper {
+    height: 32em;
+    width: 100%;
+    z-index: 99;
+    border-radius: 3%;
+  }
+  .swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    margin: 0 0 0 10px !important;
+    color: #fff !important;
+    background: #fff !important;
+  }
+  .swiper-button-next {
+    height: 15em;
+    opacity: 0;
+  }
+  .swiper-button-next::after {
+    height: 15em;
+    opacity: 0;
+  }
+  .swiper-button-prev {
+    height: 15em;
+    opacity: 0;
+  }
+  .swiper-button-prev::after {
+    height: 15em;
+    opacity: 0;
+  }
+  .swiper-slide:nth-child(1) {
+    //none
+    // text-shadow:1px 1px 0 #f00,-1px 1px 0 #f00,1px -1px 0 #f00,-1px -1px 0 #f00;
+    text-shadow: 0.5px 0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px -0.5px 0 #fff,
+      -0.5px -0.5px 0 #fff;
+    display: inline-block;
+    vertical-align: middle;
+    // writing-mode: vertical-rl;
+    // text-align: center;
+    // font-feature-settings: "palt";
+    color: #fff;
+    // background-color: #de4439;
+    background-image: url("飛騨牛特上カルビ_縦.JPG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba($color: #000, $alpha: 0.007);
+    background-size: contain;
+  }
+
+  .swiper-slide:nth-child(2) {
+    //none
+    // text-shadow:1px 1px 0 #f00,-1px 1px 0 #f00,1px -1px 0 #f00,-1px -1px 0 #f00;
+    text-shadow: 0.5px 0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px -0.5px 0 #fff,
+      -0.5px -0.5px 0 #fff;
+    display: inline-block;
+    vertical-align: middle;
+    // writing-mode: vertical-rl;
+    // text-align: center;
+    // font-feature-settings: "palt";
+    color: #fff;
+    // background-color: #de4439;
+    background-image: url("店内_縦.JPG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba($color: #000, $alpha: 0.007);
+    background-size: contain;
+  }
+
+  .swiper-slide:nth-child(3) {
+    // text-shadow:1px 1px 0 #f00,-1px 1px 0 #f00,1px -1px 0 #f00,-1px -1px 0 #f00;
+    text-shadow: 0.5px 0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px -0.5px 0 #fff,
+      -0.5px -0.5px 0 #fff;
+    display: inline-block;
+    vertical-align: middle;
+    // writing-mode: vertical-rl;
+    // text-align: center;
+    // font-feature-settings: "palt";
+    color: #fff;
+    // background-color: #de4439;
+    background-image: url("特上炙り寿司_縦.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba($color: #000, $alpha: 0.007);
+    background-size: contain;
+    // font-size: 12px;
+  }
+  .swiper-slide:nth-child(4) {
+    .hiroki {
+      margin-top: 5px;
+      // padding-top: 5px;
+      position: relative;
+
+      height: 400px;
+      width: 100%;
+      background-color: #000;
+      border-radius: 48%;
+      // background-image: url("炎.gif");
+      // background-repeat: no-repeat;
+      // background-position: bottom;
+      // background-size:100% 100px;
+
+      .hiroki_photo {
+        position: absolute;
+        top: 60px;
+        left: 50px;
+        width: 200px;
+        height: 300px;
+        border-radius: 56%;
+        background-color: #000;
+        background-image: url("ひろき_サンプル.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+      .hiroki_description {
+        position: absolute;
+        // bottom: 60px;
+        right: 50px;
+        // width: 200px;
+        // height: 300px;
+        border-radius: 56%;
+        background-color: rgba($color: #aaa, $alpha: 0.1);
+
+        color: #fee;
+        // writing-mode: vertical-rl;
+        text-align: right;
+        // font-feature-settings: "palt";
+      }
+
+      @keyframes scaleUpDown {
+        0%,
+        100% {
+          transform: scaleY(1) scaleX(1);
+        }
+        50%,
+        90% {
+          transform: scaleY(1.1);
+        }
+        75% {
+          transform: scaleY(0.95);
+        }
+        80% {
+          transform: scaleX(0.95);
+        }
+      }
+
+      @keyframes shake {
+        0%,
+        100% {
+          transform: skewX(0) scale(1);
+        }
+        50% {
+          transform: skewX(5deg) scale(0.9);
+        }
+      }
+
+      @keyframes particleUp {
+        0% {
+          opacity: 0;
+        }
+        20% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          top: -100%;
+          transform: scale(0.5);
+        }
+      }
+
+      @keyframes glow {
+        0%,
+        100% {
+          background-color: #ef5a00;
+        }
+        50% {
+          background-color: #ff7800;
+        }
+      }
+
+      .fire {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 25px;
+        // top: calc(50% - 50px);
+        left: calc(50% - 50px);
+        width: 100px;
+        height: 100px;
+        background-color: transparent;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .fire-center {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        animation: scaleUpDown 3s ease-out;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+
+        .main-fire {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-image: radial-gradient(
+            farthest-corner at 10px 0,
+            #d43300 0%,
+            #ef5a00 95%
+          );
+          transform: scaleX(0.8) rotate(45deg);
+          border-radius: 0 40% 60% 40%;
+          filter: drop-shadow(0 0 10px #d43322);
+        }
+
+        .particle-fire {
+          position: absolute;
+          top: 60%;
+          left: 45%;
+          width: 10px;
+          height: 10px;
+          background-color: #ef5a00;
+          border-radius: 50%;
+          filter: drop-shadow(0 0 10px #d43322);
+          animation: particleUp 2s ease-out 0;
+          animation-iteration-count: infinite;
+          animation-fill-mode: both;
+        }
+      }
+
+      .fire-right {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        animation: shake 2s ease-out 0;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+
+        .main-fire {
+          position: absolute;
+          top: 15%;
+          right: -25%;
+          width: 80%;
+          height: 80%;
+          background-color: #ef5a00;
+          transform: scaleX(0.8) rotate(45deg);
+          border-radius: 0 40% 60% 40%;
+          filter: drop-shadow(0 0 10px #d43322);
+        }
+
+        .particle-fire {
+          position: absolute;
+          top: 45%;
+          left: 50%;
+          width: 15px;
+          height: 15px;
+          background-color: #ef5a00;
+          transform: scaleX(0.8) rotate(45deg);
+          border-radius: 50%;
+          filter: drop-shadow(0 0 10px #d43322);
+          animation: particleUp 2s ease-out 0;
+          animation-iteration-count: infinite;
+          animation-fill-mode: both;
+        }
+      }
+
+      .fire-left {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        animation: shake 3s ease-out 0;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+
+        .main-fire {
+          position: absolute;
+          top: 15%;
+          left: -20%;
+          width: 80%;
+          height: 80%;
+          background-color: #ef5a00;
+          transform: scaleX(0.8) rotate(45deg);
+          border-radius: 0 40% 60% 40%;
+          filter: drop-shadow(0 0 10px #d43322);
+        }
+
+        .particle-fire {
+          position: absolute;
+          top: 10%;
+          left: 20%;
+          width: 10%;
+          height: 10%;
+          background-color: #ef5a00;
+          border-radius: 50%;
+          filter: drop-shadow(0 0 10px #d43322);
+          animation: particleUp 3s infinite ease-out 0;
+          animation-fill-mode: both;
+        }
+      }
+
+      .fire-bottom .main-fire {
+        position: absolute;
+        top: 30%;
+        left: 20%;
+        width: 75%;
+        height: 75%;
+        background-color: #ff7800;
+        transform: scaleX(0.8) rotate(45deg);
+        border-radius: 0 40% 100% 40%;
+        filter: blur(10px);
+        animation: glow 2s ease-out 0;
+        animation-iteration-count: infinite;
+        animation-fill-mode: both;
+      }
+    }
+  }
+
+  #store_detail {
+    #googlemap {
+      width: 100%;
+    }
+  }
+
+  .store_description {
+    .first::first-letter {
+      float: left;
+      color: var.$color_main;
+      font-size: 55px;
+      line-height: 50px;
+      padding-right: 8px;
+    }
+  }
+  .text {
+    font-size: 12px;
+  }
+
+  // .pickup{
+  //     padding-top: 15px;
+  //     position: absolute;
+  //     bottom: 20px;
+  //     right: 0;
+  //     height: 9em;
+  //     width: 100%;
+
+  //     p{
+  //         // width: 100%;
+  //         position: absolute;
+  //         font-size: 25px;
+  //         color :red($color: #000000);
+
+  //         padding: 0;
+  //     }
+  //     .first{
+  //         span{
+  //             font-size: 28px;
+  //             color: var.$color_sub;
+
+  //         }
+  //     }
+  //     .second{
+  //         top: 51px;
+  //         span{
+  //             font-size: 28px;
+  //             color: var.$color_sub;
+
+  //         }
+
+  //     }
+  //     .third{
+  //         top: 87px;
+  //         span{
+  //             font-size: 28px;
+  //             color: var.$color_sub;
+
+  //         }
+  //     }
+  // }
+  h2 {
+    margin: 0px;
+  }
+  .midasi {
+    color: yellow;
+  }
+  #menu {
+    details {
+      // padding-left: 5px;
+      margin: auto;
+    }
+    .meet {
+      // position: relative;
+      width: 100%;
+
+      // table{
+      //     margin-left: auto;
+      //     margin-right: auto;
+      //     position: relative;
+      //     border-collapse: collapse;
+      //     tr{
+      //         position: relative;
+      //         td{
+      //             width: 110px;
+      //             height: 80px;
+      //             position: relative;
+      //             font-size: 12px;
+      //             span{
+      //                 color: red;
+      //             }
+      // border-bottom: dashed 1px black;
+      .title {
+        font-weight: bold;
+        // position: absolute;
+        // top: 0px;
+      }
+
+      .description ul {
+        padding-left: 0;
+        list-style: none;
+        text-align: left;
+      }
+      .description ul li {
+        text-align: left;
+      }
+      .description {
+        // font-size: 8px;
+        font-size: 12px;
+        text-align: center;
+        // text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 3px;
+        span {
+          color: red;
+        }
+      }
+      // }
+      // .photo1{
+      //     height: 350px;
+      //     border-radius: 5%;
+      //     width: 350px;
+      //     background-image: url("飛騨牛特上カルビ_縦.JPG");
+      //     background-position: center;
+      //     background-size: contain;
+      //     background-repeat: no-repeat;
+      // position: relative;
+
+      // }
+      .card-container {
+        font-size: 10px;
+        display: flex;
+        // padding: 5px;
+        text-align: center;
+      }
+      .card-container2 {
+        font-size: 10px;
+        // padding: 5px;
+        text-align: left;
+      }
+
+      // .card-container2{
+      //     font-size: 10px;
+      //     padding: 5px;
+      //     text-align: left;
+      // }
+      .return_drink {
+        color: yellow;
+      }
+
+      // .photo2{
+      //     height: 350px;
+      //     border-radius: 5%;
+      //     width: 350px;
+      //     background-image: url("とろける霜降り上タン塩_縦.JPG");
+      //     background-position: center;
+      //     background-size: contain;
+      //     background-repeat: no-repeat;
+
+      // }
+      // .photo3{
+      // height: 350px;
+      // border-radius: 5%;
+      // width: 350px;
+      // background-image: url("厚切り特上タン塩_縦.JPG");
+      // background-position: center;
+      // background-size: contain;
+      // background-repeat: no-repeat;
+      //             }
+
+      // }
+
+      // }
+      // .photo1{
+      //     height: 350px;
+      //     border-radius: 5%;
+      //     width: 350px;
+      //     background-image: url("飛騨牛特上カルビ_縦.JPG");
+      //     background-position: center;
+      //     background-size: contain;
+      //     background-repeat: no-repeat;
+      // position: relative;
+
+      // }
+
+      // .photo2{
+      //     height: 350px;
+      //     border-radius: 5%;
+      //     width: 350px;
+      //     background-image: url("とろける霜降り上タン塩_縦.JPG");
+      //     background-position: center;
+      //     background-size: contain;
+      //     background-repeat: no-repeat;
+
+      // }
+      // .photo3{
+      // height: 350px;
+      // border-radius: 5%;
+      // width: 350px;
+      // background-image: url("厚切り特上タン塩_縦.JPG");
+      // background-position: center;
+      // background-size: contain;
+      // background-repeat: no-repeat;
+      //             }
+
+      // }
+
+      // position: relative;
+      // width: 100%;
+
+      // table{
+      //     margin-left: auto;
+      //     margin-right: auto;
+      //     position: relative;
+      //     border-collapse: collapse;
+      //     tr{
+      //         position: relative;
+      //         td{
+      //             width: 110px;
+      //             height: 80px;
+      //             position: relative;
+      //             font-size: 12px;
+
+      //             span{
+      //                 color: red;
+      //             }
+      // border-bottom: dashed 1px black;
+      // .title{
+      //     position: absolute;
+      //     top: 0;
+      // }
+
+      // .description{
+      //     font-size: 8px;
+      //     text-align: center;
+      //     margin-left: auto;
+      //     margin-right: auto;
+      //     padding-bottom: 3px;
+      //     span{
+      //         color: red;
+      //     }
+      //     .hashtag{
+      //         color: #00376B;
+      //     }
+      //     .gold{
+      //         color: gold;
+      //     }
+      //     .green{
+      //         color: green;
+      //     }
+
+      // .photo1{
+      //     height:100px;
+      //     width: 100px;
+      //     border-radius: 5%;
+      //     background-image: url("karubi.jpeg");
+      //     background-position: center;
+      //     background-size: contain;
+
+      // }
+      // .photo2{
+      //     height: 100px;
+      //     border-radius: 5%;
+      //     width: 100px;
+      //     background-image: url("test5.jpeg");
+      //     background-position: center;
+      //     background-size: contain;
+      // }
+      // .photo_none{
+      //     height: 100px;
+      //     border-radius: 5%;
+      //     width: 100px;
+      //     background-image: url("ace_big.png");
+      //     background-position: center;
+      //     background-size: contain;
+      // }
+
+      .drink {
+        position: relative;
+        width: 100%;
+
+        span {
+          color: red;
+        }
+
+        table {
+          margin-left: auto;
+          margin-right: auto;
+          position: relative;
+          border-collapse: collapse;
+          tr {
+            position: relative;
+            td {
+              width: 110px;
+              height: 80px;
+              position: relative;
+              font-size: 12px;
+              span {
+                color: red;
+              }
+              // border-bottom: dashed 1px black;
+              .title {
+                position: absolute;
+                top: 0;
+              }
+              .description {
+                // font-size: 8px;
+                font-size: 12px;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                padding-bottom: 3px;
+                span {
+                  color: red;
+                }
+                .hashtag {
+                  color: #00376b;
+                }
+                .gold {
+                  color: gold;
+                }
+                .green {
+                  color: green;
+                }
+              }
+              // .photo1{
+              //     height: 100px;
+              //     width: 100px;
+              //     border-radius: 5%;
+              //     background-image: url("karubi.jpeg");
+              //     background-position: center;
+              //     background-size: contain;
+              // }
+              // .photo2{
+              //     height: 100px;
+              //     border-radius: 5%;
+              //     width: 100px;
+              //     background-image: url("test5.jpeg");
+              //     background-position: center;
+              //     background-size: contain;
+              // }
+              // .photo_none{
+              //     height: 100px;
+              //     border-radius: 5%;
+              //     width: 100px;
+              //     background-image: url("ace_big.png");
+              //     background-position: center;
+              //     background-size: contain;
+              // }
+            }
+          }
+        }
+      }
+    }
+  }
+  .room_detail {
+    .store_table {
+      .tableheader_first {
+        text-align: left;
+        padding: 20px;
+        border-left-color: #eee;
+        border-left-width: 1px;
+        border-left-style: solid;
+        border-right-color: #eee;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-bottom-color: black;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-top-color: black;
+        border-top-width: 1px;
+        border-top-style: solid;
+      }
+      .cell_first {
+        padding: 20px;
+        border-bottom-color: #eee;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-top-color: #eee;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-right-color: #eee;
+        border-right-width: 1px;
+        border-right-style: solid;
+      }
+      .tableheader {
+        text-align: left;
+        padding: 20px;
+        border-left-color: #eee;
+        border-left-width: 1px;
+        border-left-style: solid;
+        border-right-color: #eee;
+        border-right-width: 1px;
+        border-right-style: solid;
+
+        border-bottom-color: black;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+      }
+      .cell {
+        padding: 20px;
+        border-bottom-color: #eee;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-right-color: #eee;
+        border-right-width: 1px;
+        border-right-style: solid;
+      }
+    }
+  }
+
+  #store_detail {
+    .store_table {
+      .tableheader_first {
+        text-align: left;
+        padding: 20px;
+        border-bottom-color: black;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-top-color: black;
+        border-top-width: 1px;
+        border-top-style: solid;
+      }
+      .cell_first {
+        padding: 20px;
+        border-bottom-color: #eee;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-top-color: #eee;
+        border-top-width: 1px;
+        border-top-style: solid;
+      }
+
+      .tableheader {
+        text-align: left;
+        padding: 20px;
+        border-bottom-color: black;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+      }
+      .cell {
+        padding: 20px;
+        border-bottom-color: #eee;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+      }
+    }
+  }
+
+  .store_photo {
+    width: 300px;
+    height: 240px;
+    background-image: url("店内3f横長.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba($color: #000, $alpha: 0.007);
+    background-size: contain;
+    // font-size: 12px;
+  }
+
+  .under-line {
+    background: linear-gradient(transparent, 95%, var.$color_main 0%);
+  }
+
+  .lineTrigger {
+    position: relative;
+    opacity: 0;
+    &.lineanime {
+      animation-name: lineAnimeBase;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      &::before {
+        animation: lineAnime 0.5s linear 0s forwards;
+      }
+      &::after {
+        animation: lineAnime 0.5s linear 1s forwards;
+      }
+      .line2 {
+        &::before {
+          animation: lineAnime2 0.5s linear 0.5s forwards;
+        }
+        &::after {
+          animation: lineAnime2 0.5s linear 1.5s forwards;
+        }
+      }
+      .lineinappear {
+        animation: lineInnerAnime 0.5s linear 1.5s forwards;
+        opacity: 0;
+      }
+    }
+    &::before {
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 1px;
+      background: #333; /* 枠線の色*/
+    }
+
+    .line2 {
+      .lineinappear {
+        color: red;
+      }
+      &::before {
+        top: 0;
+        right: 0;
+      }
+      &::after {
+        bottom: 0;
+        left: 0;
+      }
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 0;
+        background: #333; /* 枠線の色*/
+      }
+    }
+
+    @keyframes lineAnimeBase {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes lineAnime {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    @keyframes lineAnime2 {
+      0% {
+        height: 0%;
+      }
+      100% {
+        height: 100%;
+      }
+    }
+    @keyframes lineInnerAnime {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+  .lineTrigger2,
+  .lineTrigger3,
+  .lineTrigger4 {
+    position: relative;
+    opacity: 0;
+    &.lineanime {
+      animation-name: lineAnimeBase;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      &::before {
+        animation: lineAnime 0.5s linear 0s forwards;
+      }
+      &::after {
+        animation: lineAnime 0.5s linear 1s forwards;
+      }
+      .line2 {
+        &::before {
+          animation: lineAnime2 0.5s linear 0.5s forwards;
+        }
+        &::after {
+          animation: lineAnime2 0.5s linear 1.5s forwards;
+        }
+      }
+      .lineinappear {
+        animation: lineInnerAnime 0.5s linear 1.5s forwards;
+        opacity: 0;
+      }
+    }
+    &::before {
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 1px;
+      background: #333; /* 枠線の色*/
+    }
+
+    .line2 {
+      .lineinappear {
+        color: white;
+      }
+      &::before {
+        top: 0;
+        right: 0;
+      }
+      &::after {
+        bottom: 0;
+        left: 0;
+      }
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 0;
+        background: #333; /* 枠線の色*/
+      }
+    }
+
+    @keyframes lineAnimeBase {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes lineAnime {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    @keyframes lineAnime2 {
+      0% {
+        height: 0%;
+      }
+      100% {
+        height: 100%;
+      }
+    }
+    @keyframes lineInnerAnime {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+
+  .lineTrigger5,
+  .lineTrigger6,
+  .lineTrigger7,
+  .lineTrigger8,
+  .lineTrigger9,
+  .lineTrigger10,
+  .lineTrigger11,
+  .lineTrigger12,
+  .lineTrigger13,
+  .lineTrigger14,
+  .lineTrigger15,
+  .lineTrigger16,
+  .lineTrigger17,
+  .lineTrigger18,
+  .lineTrigger19,
+  .lineTrigger20,
+  .lineTrigger21 {
+    position: relative;
+    opacity: 0;
+    &.lineanime {
+      animation-name: lineAnimeBase;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      &::before {
+        animation: lineAnime 0.5s linear 0s forwards;
+      }
+      &::after {
+        animation: lineAnime 0.5s linear 1s forwards;
+      }
+      .line2 {
+        &::before {
+          animation: lineAnime2 0.5s linear 0.5s forwards;
+        }
+        &::after {
+          animation: lineAnime2 0.5s linear 1.5s forwards;
+        }
+      }
+      .lineinappear {
+        animation: lineInnerAnime 0.5s linear 1.5s forwards;
+
+        opacity: 0;
+      }
+    }
+    &::before {
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 1px;
+      background: #333; /* 枠線の色*/
+    }
+
+    .line2 {
+      .lineinappear {
+        color: white;
+      }
+      &::before {
+        top: 0;
+        right: 0;
+      }
+      &::after {
+        bottom: 0;
+        left: 0;
+      }
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        width: 1px;
+        height: 0;
+        background: #333; /* 枠線の色*/
+      }
+    }
+
+    @keyframes lineAnimeBase {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes lineAnime {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    @keyframes lineAnime2 {
+      0% {
+        height: 0%;
+      }
+      100% {
+        height: 100%;
+      }
+    }
+    @keyframes lineInnerAnime {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+  .hukidasi {
+    width: 100%;
+    transform-origin: left;
+    animation: check 2s infinite;
+  }
+
+  @keyframes check {
+    0% {
+      transform: scale(0) rotate(90deg);
+    }
+
+    50% {
+      transform: scale(1) rotate(0deg);
+    }
+
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+}

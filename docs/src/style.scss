@@ -1,0 +1,17 @@
+@use "header";
+@use "body";
+@use "footer";
+@use "var";
+
+html{
+    font-family: var.$font_family;
+    // .ace{
+    //     position: relative;
+    //     top: 100px;
+    //     width: 100%;
+    //     img{
+    //         filter: grayscale(100%);
+    //     }
+    // }
+
+}

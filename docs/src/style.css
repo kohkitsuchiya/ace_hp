@@ -1,0 +1,1376 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap");
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu__box {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+@media screen and (max-width: 520px) {
+  header {
+    background-color: black;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 2px solid #AAAAAA;
+    z-index: 100;
+  }
+  .logo {
+    position: relative;
+    width: 88px;
+    height: 60px;
+    background-color: black;
+    padding-left: 10px;
+    border-radius: 25%;
+  }
+  .logo .A {
+    color: red;
+    position: absolute;
+    top: 5px;
+    text-shadow: 0 0 10px #fff, 0 0 15px #fff;
+    font-size: 8px;
+    width: 4px;
+    height: 40px;
+    padding: 1px;
+    display: inline;
+    vertical-align: middle;
+    writing-mode: vertical-rl;
+    font-feature-settings: "palt";
+  }
+  .logo .B {
+    color: yellow;
+    font-size: 32px;
+    position: absolute;
+    vertical-align: middle;
+    left: 16px;
+    top: 0;
+    text-shadow: 0 0 10px #fff, 0 0 15px #fff;
+    display: inline;
+  }
+  .logo .C {
+    color: black;
+    position: absolute;
+    left: 80px;
+    top: 0;
+    text-shadow: 0 0 10px #fff, 0 0 15px #fff;
+    font-size: 42px;
+    display: inline;
+    z-index: 1;
+  }
+  .logo .D {
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 96px;
+    text-shadow: 0 0 10px #fff, 0 0 15px #fff;
+    font-size: 42px;
+    display: inline;
+  }
+  .logo .E {
+    color: black;
+    position: absolute;
+    left: 112px;
+    top: 0;
+    text-shadow: 0 0 10px #fff, 0 0 15px #fff;
+    font-size: 42px;
+    display: inline;
+    animation: tenmetu3 1s ease-in-out infinite alternate;
+  }
+  nav {
+    display: inline;
+  }
+  .menu__box {
+    flex-direction: column;
+    position: fixed;
+    visibility: hidden;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 115px;
+    margin: -600px 0 0 0;
+    padding: 0.6em;
+    text-align: center;
+    background-color: #2d303a;
+    box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    transition-duration: 0.5s;
+    opacity: 0.88;
+  }
+  .menu__item__top {
+    opacity: 0.88;
+    display: block;
+    padding: 12px 24px;
+    color: #ffffff;
+    font-size: 18px;
+    transition-duration: 0.5s;
+  }
+  .menu__item__top:hover {
+    color: rgba(255, 0, 0, 0.85);
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #ffffff;
+    font-size: 18px;
+    transition-duration: 0.5s;
+    z-index: 1;
+  }
+  .menu__item:hover {
+    color: rgba(255, 0, 0, 0.85);
+  }
+}
+.menu__item__top {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1em 0 1.9em;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0.88;
+}
+
+.menu__item {
+  opacity: 0.88;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 1em 0 1.9em;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#menu__toggle {
+  opacity: 0;
+  background: #f06c64;
+}
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+  background: #f06c64;
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+  background: #f06c64;
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+  background: #f06c64;
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+  margin: 0;
+}
+
+.menu__btn {
+  transition-duration: 0.25s;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  position: relative;
+  bottom: 10px;
+  right: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 2;
+}
+.menu__btn span {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+}
+.menu__btn span::before {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  content: "";
+  top: -8px;
+  transition-duration: 0.25s;
+}
+.menu__btn span::after {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  content: "";
+  top: 8px;
+  transition-duration: 0.25s;
+}
+@media screen and (min-width: 48em) {
+  .menu__btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .adjustment {
+    padding-top: 75px;
+  }
+  body {
+    background-color: black;
+    color: white;
+  }
+  .swiper {
+    height: 32em;
+    width: 100%;
+    z-index: 99;
+    border-radius: 3%;
+  }
+  .swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+    margin: 0 0 0 10px !important;
+    color: #fff !important;
+    background: #fff !important;
+  }
+  .swiper-button-next {
+    height: 15em;
+    opacity: 0;
+  }
+  .swiper-button-next::after {
+    height: 15em;
+    opacity: 0;
+  }
+  .swiper-button-prev {
+    height: 15em;
+    opacity: 0;
+  }
+  .swiper-button-prev::after {
+    height: 15em;
+    opacity: 0;
+  }
+  .swiper-slide:nth-child(1) {
+    text-shadow: 0.5px 0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px -0.5px 0 #fff;
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    background-image: url("飛騨牛特上カルビ_縦.JPG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.007);
+    background-size: contain;
+  }
+  .swiper-slide:nth-child(2) {
+    text-shadow: 0.5px 0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px -0.5px 0 #fff;
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    background-image: url("店内_縦.JPG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.007);
+    background-size: contain;
+  }
+  .swiper-slide:nth-child(3) {
+    text-shadow: 0.5px 0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px -0.5px 0 #fff;
+    display: inline-block;
+    vertical-align: middle;
+    color: #fff;
+    background-image: url("特上炙り寿司_縦.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.007);
+    background-size: contain;
+  }
+  .swiper-slide:nth-child(4) .hiroki {
+    margin-top: 5px;
+    position: relative;
+    height: 400px;
+    width: 100%;
+    background-color: #000;
+    border-radius: 48%;
+  }
+  .swiper-slide:nth-child(4) .hiroki .hiroki_photo {
+    position: absolute;
+    top: 60px;
+    left: 50px;
+    width: 200px;
+    height: 300px;
+    border-radius: 56%;
+    background-color: #000;
+    background-image: url("ひろき_サンプル.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  .swiper-slide:nth-child(4) .hiroki .hiroki_description {
+    position: absolute;
+    right: 50px;
+    border-radius: 56%;
+    background-color: rgba(170, 170, 170, 0.1);
+    color: #fee;
+    text-align: right;
+  }
+  @keyframes scaleUpDown {
+    0%, 100% {
+      transform: scaleY(1) scaleX(1);
+    }
+    50%, 90% {
+      transform: scaleY(1.1);
+    }
+    75% {
+      transform: scaleY(0.95);
+    }
+    80% {
+      transform: scaleX(0.95);
+    }
+  }
+  @keyframes shake {
+    0%, 100% {
+      transform: skewX(0) scale(1);
+    }
+    50% {
+      transform: skewX(5deg) scale(0.9);
+    }
+  }
+  @keyframes particleUp {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      top: -100%;
+      transform: scale(0.5);
+    }
+  }
+  @keyframes glow {
+    0%, 100% {
+      background-color: #ef5a00;
+    }
+    50% {
+      background-color: #ff7800;
+    }
+  }
+  .swiper-slide:nth-child(4) .hiroki .fire {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 25px;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .swiper-slide:nth-child(4) .hiroki .fire-center {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    animation: scaleUpDown 3s ease-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+  .swiper-slide:nth-child(4) .hiroki .fire-center .main-fire {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(farthest-corner at 10px 0, #d43300 0%, #ef5a00 95%);
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 0 40% 60% 40%;
+    filter: drop-shadow(0 0 10px #d43322);
+  }
+  .swiper-slide:nth-child(4) .hiroki .fire-center .particle-fire {
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    width: 10px;
+    height: 10px;
+    background-color: #ef5a00;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px #d43322);
+    animation: particleUp 2s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+  .swiper-slide:nth-child(4) .hiroki .fire-right {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    animation: shake 2s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+  .swiper-slide:nth-child(4) .hiroki .fire-right .main-fire {
+    position: absolute;
+    top: 15%;
+    right: -25%;
+    width: 80%;
+    height: 80%;
+    background-color: #ef5a00;
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 0 40% 60% 40%;
+    filter: drop-shadow(0 0 10px #d43322);
+  }
+  .swiper-slide:nth-child(4) .hiroki .fire-right .particle-fire {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #ef5a00;
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px #d43322);
+    animation: particleUp 2s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+  .swiper-slide:nth-child(4) .hiroki .fire-left {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    animation: shake 3s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+  .swiper-slide:nth-child(4) .hiroki .fire-left .main-fire {
+    position: absolute;
+    top: 15%;
+    left: -20%;
+    width: 80%;
+    height: 80%;
+    background-color: #ef5a00;
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 0 40% 60% 40%;
+    filter: drop-shadow(0 0 10px #d43322);
+  }
+  .swiper-slide:nth-child(4) .hiroki .fire-left .particle-fire {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 10%;
+    height: 10%;
+    background-color: #ef5a00;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px #d43322);
+    animation: particleUp 3s infinite ease-out 0;
+    animation-fill-mode: both;
+  }
+  .swiper-slide:nth-child(4) .hiroki .fire-bottom .main-fire {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 75%;
+    height: 75%;
+    background-color: #ff7800;
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 0 40% 100% 40%;
+    filter: blur(10px);
+    animation: glow 2s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+  #store_detail #googlemap {
+    width: 100%;
+  }
+  .store_description .first::first-letter {
+    float: left;
+    color: rgba(255, 0, 0, 0.85);
+    font-size: 55px;
+    line-height: 50px;
+    padding-right: 8px;
+  }
+  .text {
+    font-size: 12px;
+  }
+  h2 {
+    margin: 0px;
+  }
+  .midasi {
+    color: yellow;
+  }
+  #menu details {
+    margin: auto;
+  }
+  #menu .meet {
+    width: 100%;
+  }
+  #menu .meet .title {
+    font-weight: bold;
+  }
+  #menu .meet .description ul {
+    padding-left: 0;
+    list-style: none;
+    text-align: left;
+  }
+  #menu .meet .description ul li {
+    text-align: left;
+  }
+  #menu .meet .description {
+    font-size: 12px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 3px;
+  }
+  #menu .meet .description span {
+    color: red;
+  }
+  #menu .meet .card-container {
+    font-size: 10px;
+    display: flex;
+    text-align: center;
+  }
+  #menu .meet .card-container2 {
+    font-size: 10px;
+    text-align: left;
+  }
+  #menu .meet .return_drink {
+    color: yellow;
+  }
+  #menu .meet .drink {
+    position: relative;
+    width: 100%;
+  }
+  #menu .meet .drink span {
+    color: red;
+  }
+  #menu .meet .drink table {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    border-collapse: collapse;
+  }
+  #menu .meet .drink table tr {
+    position: relative;
+  }
+  #menu .meet .drink table tr td {
+    width: 110px;
+    height: 80px;
+    position: relative;
+    font-size: 12px;
+  }
+  #menu .meet .drink table tr td span {
+    color: red;
+  }
+  #menu .meet .drink table tr td .title {
+    position: absolute;
+    top: 0;
+  }
+  #menu .meet .drink table tr td .description {
+    font-size: 12px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 3px;
+  }
+  #menu .meet .drink table tr td .description span {
+    color: red;
+  }
+  #menu .meet .drink table tr td .description .hashtag {
+    color: #00376b;
+  }
+  #menu .meet .drink table tr td .description .gold {
+    color: gold;
+  }
+  #menu .meet .drink table tr td .description .green {
+    color: green;
+  }
+  .room_detail .store_table .tableheader_first {
+    text-align: left;
+    padding: 20px;
+    border-left-color: #eee;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-right-color: #eee;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-top-color: black;
+    border-top-width: 1px;
+    border-top-style: solid;
+  }
+  .room_detail .store_table .cell_first {
+    padding: 20px;
+    border-bottom-color: #eee;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-top-color: #eee;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-right-color: #eee;
+    border-right-width: 1px;
+    border-right-style: solid;
+  }
+  .room_detail .store_table .tableheader {
+    text-align: left;
+    padding: 20px;
+    border-left-color: #eee;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-right-color: #eee;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+  .room_detail .store_table .cell {
+    padding: 20px;
+    border-bottom-color: #eee;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-right-color: #eee;
+    border-right-width: 1px;
+    border-right-style: solid;
+  }
+  #store_detail .store_table .tableheader_first {
+    text-align: left;
+    padding: 20px;
+    border-bottom-color: black;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-top-color: black;
+    border-top-width: 1px;
+    border-top-style: solid;
+  }
+  #store_detail .store_table .cell_first {
+    padding: 20px;
+    border-bottom-color: #eee;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-top-color: #eee;
+    border-top-width: 1px;
+    border-top-style: solid;
+  }
+  #store_detail .store_table .tableheader {
+    text-align: left;
+    padding: 20px;
+    border-bottom-color: black;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+  #store_detail .store_table .cell {
+    padding: 20px;
+    border-bottom-color: #eee;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+  .store_photo {
+    width: 300px;
+    height: 240px;
+    background-image: url("店内3f横長.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.007);
+    background-size: contain;
+  }
+  .under-line {
+    background: linear-gradient(transparent, 95%, rgba(255, 0, 0, 0.85) 0%);
+  }
+  .lineTrigger {
+    position: relative;
+    opacity: 0;
+  }
+  .lineTrigger.lineanime {
+    animation-name: lineAnimeBase;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  .lineTrigger.lineanime::before {
+    animation: lineAnime 0.5s linear 0s forwards;
+  }
+  .lineTrigger.lineanime::after {
+    animation: lineAnime 0.5s linear 1s forwards;
+  }
+  .lineTrigger.lineanime .line2::before {
+    animation: lineAnime2 0.5s linear 0.5s forwards;
+  }
+  .lineTrigger.lineanime .line2::after {
+    animation: lineAnime2 0.5s linear 1.5s forwards;
+  }
+  .lineTrigger.lineanime .lineinappear {
+    animation: lineInnerAnime 0.5s linear 1.5s forwards;
+    opacity: 0;
+  }
+  .lineTrigger::before {
+    top: 0;
+    left: 0;
+  }
+  .lineTrigger::after {
+    bottom: 0;
+    right: 0;
+  }
+  .lineTrigger::before, .lineTrigger::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 1px;
+    background: #333; /* 枠線の色*/
+  }
+  .lineTrigger .line2 .lineinappear {
+    color: red;
+  }
+  .lineTrigger .line2::before {
+    top: 0;
+    right: 0;
+  }
+  .lineTrigger .line2::after {
+    bottom: 0;
+    left: 0;
+  }
+  .lineTrigger .line2::before, .lineTrigger .line2::after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 0;
+    background: #333; /* 枠線の色*/
+  }
+  @keyframes lineAnimeBase {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes lineAnime {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  @keyframes lineAnime2 {
+    0% {
+      height: 0%;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  @keyframes lineInnerAnime {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .lineTrigger2,
+  .lineTrigger3,
+  .lineTrigger4 {
+    position: relative;
+    opacity: 0;
+  }
+  .lineTrigger2.lineanime,
+  .lineTrigger3.lineanime,
+  .lineTrigger4.lineanime {
+    animation-name: lineAnimeBase;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  .lineTrigger2.lineanime::before,
+  .lineTrigger3.lineanime::before,
+  .lineTrigger4.lineanime::before {
+    animation: lineAnime 0.5s linear 0s forwards;
+  }
+  .lineTrigger2.lineanime::after,
+  .lineTrigger3.lineanime::after,
+  .lineTrigger4.lineanime::after {
+    animation: lineAnime 0.5s linear 1s forwards;
+  }
+  .lineTrigger2.lineanime .line2::before,
+  .lineTrigger3.lineanime .line2::before,
+  .lineTrigger4.lineanime .line2::before {
+    animation: lineAnime2 0.5s linear 0.5s forwards;
+  }
+  .lineTrigger2.lineanime .line2::after,
+  .lineTrigger3.lineanime .line2::after,
+  .lineTrigger4.lineanime .line2::after {
+    animation: lineAnime2 0.5s linear 1.5s forwards;
+  }
+  .lineTrigger2.lineanime .lineinappear,
+  .lineTrigger3.lineanime .lineinappear,
+  .lineTrigger4.lineanime .lineinappear {
+    animation: lineInnerAnime 0.5s linear 1.5s forwards;
+    opacity: 0;
+  }
+  .lineTrigger2::before,
+  .lineTrigger3::before,
+  .lineTrigger4::before {
+    top: 0;
+    left: 0;
+  }
+  .lineTrigger2::after,
+  .lineTrigger3::after,
+  .lineTrigger4::after {
+    bottom: 0;
+    right: 0;
+  }
+  .lineTrigger2::before, .lineTrigger2::after,
+  .lineTrigger3::before,
+  .lineTrigger3::after,
+  .lineTrigger4::before,
+  .lineTrigger4::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 1px;
+    background: #333; /* 枠線の色*/
+  }
+  .lineTrigger2 .line2 .lineinappear,
+  .lineTrigger3 .line2 .lineinappear,
+  .lineTrigger4 .line2 .lineinappear {
+    color: white;
+  }
+  .lineTrigger2 .line2::before,
+  .lineTrigger3 .line2::before,
+  .lineTrigger4 .line2::before {
+    top: 0;
+    right: 0;
+  }
+  .lineTrigger2 .line2::after,
+  .lineTrigger3 .line2::after,
+  .lineTrigger4 .line2::after {
+    bottom: 0;
+    left: 0;
+  }
+  .lineTrigger2 .line2::before, .lineTrigger2 .line2::after,
+  .lineTrigger3 .line2::before,
+  .lineTrigger3 .line2::after,
+  .lineTrigger4 .line2::before,
+  .lineTrigger4 .line2::after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 0;
+    background: #333; /* 枠線の色*/
+  }
+  @keyframes lineAnimeBase {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes lineAnime {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  @keyframes lineAnime2 {
+    0% {
+      height: 0%;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  @keyframes lineInnerAnime {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .lineTrigger5,
+  .lineTrigger6,
+  .lineTrigger7,
+  .lineTrigger8,
+  .lineTrigger9,
+  .lineTrigger10,
+  .lineTrigger11,
+  .lineTrigger12,
+  .lineTrigger13,
+  .lineTrigger14,
+  .lineTrigger15,
+  .lineTrigger16,
+  .lineTrigger17,
+  .lineTrigger18,
+  .lineTrigger19,
+  .lineTrigger20,
+  .lineTrigger21 {
+    position: relative;
+    opacity: 0;
+  }
+  .lineTrigger5.lineanime,
+  .lineTrigger6.lineanime,
+  .lineTrigger7.lineanime,
+  .lineTrigger8.lineanime,
+  .lineTrigger9.lineanime,
+  .lineTrigger10.lineanime,
+  .lineTrigger11.lineanime,
+  .lineTrigger12.lineanime,
+  .lineTrigger13.lineanime,
+  .lineTrigger14.lineanime,
+  .lineTrigger15.lineanime,
+  .lineTrigger16.lineanime,
+  .lineTrigger17.lineanime,
+  .lineTrigger18.lineanime,
+  .lineTrigger19.lineanime,
+  .lineTrigger20.lineanime,
+  .lineTrigger21.lineanime {
+    animation-name: lineAnimeBase;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  .lineTrigger5.lineanime::before,
+  .lineTrigger6.lineanime::before,
+  .lineTrigger7.lineanime::before,
+  .lineTrigger8.lineanime::before,
+  .lineTrigger9.lineanime::before,
+  .lineTrigger10.lineanime::before,
+  .lineTrigger11.lineanime::before,
+  .lineTrigger12.lineanime::before,
+  .lineTrigger13.lineanime::before,
+  .lineTrigger14.lineanime::before,
+  .lineTrigger15.lineanime::before,
+  .lineTrigger16.lineanime::before,
+  .lineTrigger17.lineanime::before,
+  .lineTrigger18.lineanime::before,
+  .lineTrigger19.lineanime::before,
+  .lineTrigger20.lineanime::before,
+  .lineTrigger21.lineanime::before {
+    animation: lineAnime 0.5s linear 0s forwards;
+  }
+  .lineTrigger5.lineanime::after,
+  .lineTrigger6.lineanime::after,
+  .lineTrigger7.lineanime::after,
+  .lineTrigger8.lineanime::after,
+  .lineTrigger9.lineanime::after,
+  .lineTrigger10.lineanime::after,
+  .lineTrigger11.lineanime::after,
+  .lineTrigger12.lineanime::after,
+  .lineTrigger13.lineanime::after,
+  .lineTrigger14.lineanime::after,
+  .lineTrigger15.lineanime::after,
+  .lineTrigger16.lineanime::after,
+  .lineTrigger17.lineanime::after,
+  .lineTrigger18.lineanime::after,
+  .lineTrigger19.lineanime::after,
+  .lineTrigger20.lineanime::after,
+  .lineTrigger21.lineanime::after {
+    animation: lineAnime 0.5s linear 1s forwards;
+  }
+  .lineTrigger5.lineanime .line2::before,
+  .lineTrigger6.lineanime .line2::before,
+  .lineTrigger7.lineanime .line2::before,
+  .lineTrigger8.lineanime .line2::before,
+  .lineTrigger9.lineanime .line2::before,
+  .lineTrigger10.lineanime .line2::before,
+  .lineTrigger11.lineanime .line2::before,
+  .lineTrigger12.lineanime .line2::before,
+  .lineTrigger13.lineanime .line2::before,
+  .lineTrigger14.lineanime .line2::before,
+  .lineTrigger15.lineanime .line2::before,
+  .lineTrigger16.lineanime .line2::before,
+  .lineTrigger17.lineanime .line2::before,
+  .lineTrigger18.lineanime .line2::before,
+  .lineTrigger19.lineanime .line2::before,
+  .lineTrigger20.lineanime .line2::before,
+  .lineTrigger21.lineanime .line2::before {
+    animation: lineAnime2 0.5s linear 0.5s forwards;
+  }
+  .lineTrigger5.lineanime .line2::after,
+  .lineTrigger6.lineanime .line2::after,
+  .lineTrigger7.lineanime .line2::after,
+  .lineTrigger8.lineanime .line2::after,
+  .lineTrigger9.lineanime .line2::after,
+  .lineTrigger10.lineanime .line2::after,
+  .lineTrigger11.lineanime .line2::after,
+  .lineTrigger12.lineanime .line2::after,
+  .lineTrigger13.lineanime .line2::after,
+  .lineTrigger14.lineanime .line2::after,
+  .lineTrigger15.lineanime .line2::after,
+  .lineTrigger16.lineanime .line2::after,
+  .lineTrigger17.lineanime .line2::after,
+  .lineTrigger18.lineanime .line2::after,
+  .lineTrigger19.lineanime .line2::after,
+  .lineTrigger20.lineanime .line2::after,
+  .lineTrigger21.lineanime .line2::after {
+    animation: lineAnime2 0.5s linear 1.5s forwards;
+  }
+  .lineTrigger5.lineanime .lineinappear,
+  .lineTrigger6.lineanime .lineinappear,
+  .lineTrigger7.lineanime .lineinappear,
+  .lineTrigger8.lineanime .lineinappear,
+  .lineTrigger9.lineanime .lineinappear,
+  .lineTrigger10.lineanime .lineinappear,
+  .lineTrigger11.lineanime .lineinappear,
+  .lineTrigger12.lineanime .lineinappear,
+  .lineTrigger13.lineanime .lineinappear,
+  .lineTrigger14.lineanime .lineinappear,
+  .lineTrigger15.lineanime .lineinappear,
+  .lineTrigger16.lineanime .lineinappear,
+  .lineTrigger17.lineanime .lineinappear,
+  .lineTrigger18.lineanime .lineinappear,
+  .lineTrigger19.lineanime .lineinappear,
+  .lineTrigger20.lineanime .lineinappear,
+  .lineTrigger21.lineanime .lineinappear {
+    animation: lineInnerAnime 0.5s linear 1.5s forwards;
+    opacity: 0;
+  }
+  .lineTrigger5::before,
+  .lineTrigger6::before,
+  .lineTrigger7::before,
+  .lineTrigger8::before,
+  .lineTrigger9::before,
+  .lineTrigger10::before,
+  .lineTrigger11::before,
+  .lineTrigger12::before,
+  .lineTrigger13::before,
+  .lineTrigger14::before,
+  .lineTrigger15::before,
+  .lineTrigger16::before,
+  .lineTrigger17::before,
+  .lineTrigger18::before,
+  .lineTrigger19::before,
+  .lineTrigger20::before,
+  .lineTrigger21::before {
+    top: 0;
+    left: 0;
+  }
+  .lineTrigger5::after,
+  .lineTrigger6::after,
+  .lineTrigger7::after,
+  .lineTrigger8::after,
+  .lineTrigger9::after,
+  .lineTrigger10::after,
+  .lineTrigger11::after,
+  .lineTrigger12::after,
+  .lineTrigger13::after,
+  .lineTrigger14::after,
+  .lineTrigger15::after,
+  .lineTrigger16::after,
+  .lineTrigger17::after,
+  .lineTrigger18::after,
+  .lineTrigger19::after,
+  .lineTrigger20::after,
+  .lineTrigger21::after {
+    bottom: 0;
+    right: 0;
+  }
+  .lineTrigger5::before, .lineTrigger5::after,
+  .lineTrigger6::before,
+  .lineTrigger6::after,
+  .lineTrigger7::before,
+  .lineTrigger7::after,
+  .lineTrigger8::before,
+  .lineTrigger8::after,
+  .lineTrigger9::before,
+  .lineTrigger9::after,
+  .lineTrigger10::before,
+  .lineTrigger10::after,
+  .lineTrigger11::before,
+  .lineTrigger11::after,
+  .lineTrigger12::before,
+  .lineTrigger12::after,
+  .lineTrigger13::before,
+  .lineTrigger13::after,
+  .lineTrigger14::before,
+  .lineTrigger14::after,
+  .lineTrigger15::before,
+  .lineTrigger15::after,
+  .lineTrigger16::before,
+  .lineTrigger16::after,
+  .lineTrigger17::before,
+  .lineTrigger17::after,
+  .lineTrigger18::before,
+  .lineTrigger18::after,
+  .lineTrigger19::before,
+  .lineTrigger19::after,
+  .lineTrigger20::before,
+  .lineTrigger20::after,
+  .lineTrigger21::before,
+  .lineTrigger21::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 1px;
+    background: #333; /* 枠線の色*/
+  }
+  .lineTrigger5 .line2 .lineinappear,
+  .lineTrigger6 .line2 .lineinappear,
+  .lineTrigger7 .line2 .lineinappear,
+  .lineTrigger8 .line2 .lineinappear,
+  .lineTrigger9 .line2 .lineinappear,
+  .lineTrigger10 .line2 .lineinappear,
+  .lineTrigger11 .line2 .lineinappear,
+  .lineTrigger12 .line2 .lineinappear,
+  .lineTrigger13 .line2 .lineinappear,
+  .lineTrigger14 .line2 .lineinappear,
+  .lineTrigger15 .line2 .lineinappear,
+  .lineTrigger16 .line2 .lineinappear,
+  .lineTrigger17 .line2 .lineinappear,
+  .lineTrigger18 .line2 .lineinappear,
+  .lineTrigger19 .line2 .lineinappear,
+  .lineTrigger20 .line2 .lineinappear,
+  .lineTrigger21 .line2 .lineinappear {
+    color: white;
+  }
+  .lineTrigger5 .line2::before,
+  .lineTrigger6 .line2::before,
+  .lineTrigger7 .line2::before,
+  .lineTrigger8 .line2::before,
+  .lineTrigger9 .line2::before,
+  .lineTrigger10 .line2::before,
+  .lineTrigger11 .line2::before,
+  .lineTrigger12 .line2::before,
+  .lineTrigger13 .line2::before,
+  .lineTrigger14 .line2::before,
+  .lineTrigger15 .line2::before,
+  .lineTrigger16 .line2::before,
+  .lineTrigger17 .line2::before,
+  .lineTrigger18 .line2::before,
+  .lineTrigger19 .line2::before,
+  .lineTrigger20 .line2::before,
+  .lineTrigger21 .line2::before {
+    top: 0;
+    right: 0;
+  }
+  .lineTrigger5 .line2::after,
+  .lineTrigger6 .line2::after,
+  .lineTrigger7 .line2::after,
+  .lineTrigger8 .line2::after,
+  .lineTrigger9 .line2::after,
+  .lineTrigger10 .line2::after,
+  .lineTrigger11 .line2::after,
+  .lineTrigger12 .line2::after,
+  .lineTrigger13 .line2::after,
+  .lineTrigger14 .line2::after,
+  .lineTrigger15 .line2::after,
+  .lineTrigger16 .line2::after,
+  .lineTrigger17 .line2::after,
+  .lineTrigger18 .line2::after,
+  .lineTrigger19 .line2::after,
+  .lineTrigger20 .line2::after,
+  .lineTrigger21 .line2::after {
+    bottom: 0;
+    left: 0;
+  }
+  .lineTrigger5 .line2::before, .lineTrigger5 .line2::after,
+  .lineTrigger6 .line2::before,
+  .lineTrigger6 .line2::after,
+  .lineTrigger7 .line2::before,
+  .lineTrigger7 .line2::after,
+  .lineTrigger8 .line2::before,
+  .lineTrigger8 .line2::after,
+  .lineTrigger9 .line2::before,
+  .lineTrigger9 .line2::after,
+  .lineTrigger10 .line2::before,
+  .lineTrigger10 .line2::after,
+  .lineTrigger11 .line2::before,
+  .lineTrigger11 .line2::after,
+  .lineTrigger12 .line2::before,
+  .lineTrigger12 .line2::after,
+  .lineTrigger13 .line2::before,
+  .lineTrigger13 .line2::after,
+  .lineTrigger14 .line2::before,
+  .lineTrigger14 .line2::after,
+  .lineTrigger15 .line2::before,
+  .lineTrigger15 .line2::after,
+  .lineTrigger16 .line2::before,
+  .lineTrigger16 .line2::after,
+  .lineTrigger17 .line2::before,
+  .lineTrigger17 .line2::after,
+  .lineTrigger18 .line2::before,
+  .lineTrigger18 .line2::after,
+  .lineTrigger19 .line2::before,
+  .lineTrigger19 .line2::after,
+  .lineTrigger20 .line2::before,
+  .lineTrigger20 .line2::after,
+  .lineTrigger21 .line2::before,
+  .lineTrigger21 .line2::after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 0;
+    background: #333; /* 枠線の色*/
+  }
+  @keyframes lineAnimeBase {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes lineAnime {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  @keyframes lineAnime2 {
+    0% {
+      height: 0%;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  @keyframes lineInnerAnime {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .hukidasi {
+    width: 100%;
+    transform-origin: left;
+    animation: check 2s infinite;
+  }
+  @keyframes check {
+    0% {
+      transform: scale(0) rotate(90deg);
+    }
+    50% {
+      transform: scale(1) rotate(0deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+}
+@media screen and (max-width: 520px) {
+  footer {
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    display: flex;
+    z-index: 100;
+    background-color: black;
+  }
+  footer .title {
+    color: red;
+  }
+}
+input[type=checkbox] {
+  display: none;
+}
+
+.btn {
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+
+.btn svg {
+  position: relative;
+  top: 1px;
+  right: 1px;
+}
+
+.btn--large {
+  z-index: 101;
+  background-image: url("./ace5.png");
+  background-repeat: no-repeat;
+  background-position: left 1.5px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+.btn--large.active {
+  background-image: url("./ace4.png");
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.btn--comment {
+  background: red;
+}
+
+.btn--star {
+  background: yellow;
+}
+
+.btn--share {
+  background: #222;
+}
+
+.actions-menu {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.actions-menu .btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  opacity: 0;
+  transition: top 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275), left 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 200ms;
+}
+
+.actions-menu .btn--menu {
+  position: absolute;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.btn--menu, #actionMenuButton:checked + .actions-menu > .btn {
+  opacity: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+#actionMenuButton:checked + .actions-menu > .btn--menu:after {
+  transform: rotate(45deg);
+}
+
+#actionMenuButton:checked + .actions-menu > .btn--menu:before {
+  transform: rotate(-45deg);
+}
+
+#actionMenuButton:checked + .actions-menu > .btn--share {
+  top: -70px;
+}
+
+#actionMenuButton:checked + .actions-menu > .btn--star {
+  top: -50px;
+  left: -50px;
+}
+
+#actionMenuButton:checked + .actions-menu > .btn--comment {
+  left: -70px;
+}
+
+html {
+  font-family: "Zen Maru Gothic", sans-serif;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,48 @@
+$color_main: rgba(255, 0, 0, 0.85);
+// $color_sub: rgba(255, 247, 0, 0.9);
+$color_sub: red;
+$color_sub2: rgba(100, 100, 100, 0.7);
+// $shadow_color: #e2d06e;
+$shadow_color:#fff;
+$shadow_size: 0.3px;
+$shadow_size_mainasu: -0.3px;
+
+
+
+$size_min:520px;
+$size_max:960px;
+
+// @import url('https://fonts.googleapis.com/css2?family=Alkalami&display=swap');
+// $font_family: 'Alkalami', serif;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+$font-family: 'Zen Maru Gothic', sans-serif;
+
+
+// @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap');
+// $font-family: 'Shippori Mincho', serif;
+
+
+
+// @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+
+@mixin pc_screen() {
+    @media screen and (min-width: $size_max) {
+        @content;
+    }
+}
+
+@mixin sp_screen() {
+    @media screen and (max-width: $size_min) {
+        @content;
+    }
+} 
+
+
+// @mixin tb_screen($minBreakPoint, $maxBreakPoint) {
+//     @media screen and (min-width: $minBreakPoint) and (max-width: $maxBreakPoint) {
+//         @content;
+//     }
+// }
